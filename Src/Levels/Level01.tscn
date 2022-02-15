@@ -33,7 +33,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 0/z_index = 0
 
-[node name="Level01" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="BGtiled" parent="." instance=ExtResource( 2 )]
@@ -60,7 +60,7 @@ margin_right = 850.0
 margin_bottom = 308.0
 
 [node name="CollisionShape2D" parent="Goal" index="1"]
-position = Vector2( 370, 292 )
+position = Vector2( 370, 291.5 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 margin_right = 1024.0

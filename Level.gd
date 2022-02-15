@@ -1,13 +1,10 @@
 extends Node2D
 
 var held_object = null
-var startTime : int
-var endTime : int
 
 
 func _ready():
-	startTime = OS.get_ticks_msec()
-	print(startTime)
+	find_node("Goal").connect("levelComplete", self, "wrapUpLevel")
 	for node in get_tree().get_nodes_in_group("pickable"):
 		node.connect("clicked", self, "_on_pickable_clicked")
 
@@ -25,5 +22,9 @@ func _unhandled_input(event):
 			held_object = null
 
 
-func setEndTime() -> void:
-	pass
+func wrapUpLevel() -> void:
+	$HUD/Counter.stop()
+	var lvl = name.trim_prefix("Level")
+	var lvlNum = int(lvl)
+	Global.submitFinishedLevelTime(lvlNum)
+	print(Global.levelTimes)

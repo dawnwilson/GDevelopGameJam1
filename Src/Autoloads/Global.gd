@@ -23,5 +23,5 @@ func getSeconds() -> int:
 
 
 func submitFinishedLevelTime(lvl : int) -> void:
-	levelTimes[lvl][1][0] = getMinutes()
-	levelTimes[lvl][1][1] = getSeconds()
+	levelTimes[lvl][0] = getMinutes()
+	levelTimes[lvl][1] = getSeconds()
